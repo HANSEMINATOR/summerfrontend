@@ -11,6 +11,7 @@ import Overview from './pages/Overview.js';
 import Home from './pages/home.js';
 import NotFoundPage from "./pages/notfoundpage.js"
 import './App.css';
+import Gokarts from './pages/Gokarts';
 
 const menuDiv = {
   backgroundColor: "#FFDBFF",
@@ -144,12 +145,12 @@ function App() {
   return (
     
     <Router>
-      <Grid container direction="column" spacing={9}>
+      <Grid container direction="column"  maxWidth='false'>
         <Grid container item xs={12}>
-          <Grid item xs={3} style={specialLogo}>
+          <Grid item xs={4} style={specialLogo}>
             <p style={textGboys}>AU Summer University</p>
           </Grid>
-          <Grid container item xs={6} style={mystyle} >
+          <Grid container item xs={4} style={mystyle} >
               <Grid item xs={2} style={homeCSS}>
                 <Link to="/">
                 <img src={homeLogo} alt="Logo" style={imgCSS}></img>
@@ -161,13 +162,13 @@ function App() {
                 </Link>
               </Grid>
               <Grid item xs={5} style={menuDiv}>
-                  <Link to="/seasons">
+                  <Link to="/gokarts">
                   <p  style={menuText}>GoKartsne</p>
                   </Link>
               </Grid>
               
           </Grid>
-          <Grid item xs={3} style={specialBandit}>
+          <Grid item xs={4} style={specialBandit}>
             <img src={banditLogo} alt="Logo" style={imgCSS}></img>
           </Grid>
       </Grid>
@@ -177,9 +178,9 @@ function App() {
       <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/overview' component={Overview} />
+            <Route path='/gokarts' component={Gokarts} />
             <Route component={NotFoundPage}></Route>
       </Switch>
-      <p>pikke</p>  
 
       </Grid>
 
